@@ -73,7 +73,7 @@ class APIConsumer extends Component{
             <AppNav />            
             <List pokemonList={pokemonList} />            
           </Grid>
-          <Container fixed>
+          <Container>
           <Pagination 
           increment={this.increment} 
           decrement={this.decrement} 

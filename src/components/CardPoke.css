@@ -1,10 +1,10 @@
 .item{
-    min-Width: "350px";
-    text-Align: "center";
-    margin: "2em";
-    padding: '1em'
+    min-Width: 288px;    
+    text-Align: center;
+    margin: 1em;
+    padding: 1em
 }
 
 .media{
-    min-Height: "350px"
+    min-width: 144px
 }
