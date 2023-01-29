@@ -31,18 +31,24 @@ class APIConsumer extends Component{
 
     increment= () => {
     const { currentOffset, pageCounter } = this.state;
-    this.setState({
+    if(pageCounter<=63){
+      this.setState({
         currentOffset: currentOffset + 20,
         pageCounter: pageCounter + 1,
     });
     }
     
+    }
+    
     decrement= () => {
     const { currentOffset, pageCounter } = this.state;
-    this.setState({
+    if(pageCounter>=2){
+      this.setState({
         currentOffset: currentOffset - 20,
         pageCounter: pageCounter - 1,
     });
+    }
+    
     }    
 
     componentDidMount(){

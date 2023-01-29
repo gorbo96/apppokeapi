@@ -34,19 +34,31 @@ class APIDetails extends Component{
             return(
                 <>
                 <AppNav />
-                <Container >
+                <Container 
+                sx={{background:'#70b8f0'}}
+                >
                         <img className='media' src={imgF} height='360'/>
                         <img className='media' src={imgB} height='360'/>                        
-                        <Typography component="p" variant="h3" align='center'>{this.props.params.pokeName.toUpperCase()}</Typography>
-                        <Typography component="p" variant="h4" align='center'>Weight</Typography>
-                        <Typography component="p" variant="h5" align='center'>{pokeData.weight}</Typography>
-                        <Typography component="p" variant="h4" align='center'>Height</Typography>
-                        <Typography component="p" variant="h5" align='center'>{pokeData.height}</Typography>
-                        <Typography component="p" variant="h4" align='center'>Type</Typography>
+                        <Typography component="p" variant="h3" align='right'
+                        sx={{borderBottom:2}}
+                        >{this.props.params.pokeName.toUpperCase()}</Typography>
+                        <Typography component="p" variant="h4" align='left'
+                        sx={{borderBottom:1}}
+                        >Weight</Typography>
+                        <Typography component="p" variant="h5" align='right'>{pokeData.weight}</Typography>
+                        <Typography component="p" variant="h4" align='left'
+                        sx={{borderBottom:1}}
+                        >Height</Typography>
+                        <Typography component="p" variant="h5" align='right'>{pokeData.height}</Typography>
+                        <Typography component="p" variant="h4" align='left'
+                        sx={{borderBottom:1}}
+                        >Type</Typography>
                         {pokeType.map((tipo)=>{
-                            return <Typography component="p" variant="h5" align='center'>{tipo.type.name.toUpperCase()}</Typography>
+                            return <Typography component="p" variant="h5" align='right'>{tipo.type.name.toUpperCase()}</Typography>
                         })}
-                        <Typography component="p" variant="h4" align='center'>Abilities</Typography>
+                        <Typography component="p" variant="h4" align='left'
+                        sx={{borderBottom:1}}
+                        >Abilities</Typography>
                         <List
                         sx={{
                             width: '100%',
@@ -55,6 +67,7 @@ class APIDetails extends Component{
                             position: 'relative',
                             overflow: 'auto',
                             maxHeight: 300,
+                            background:'#70b8f0',
                             '& ul': { padding: 0},
                         }}                        
                         >
@@ -62,13 +75,15 @@ class APIDetails extends Component{
                             <li >
                                 <ul>
                                     <ListItem >
-                                        <Typography component="p" variant="h6" align='center'>{ability.ability.name}</Typography>                                        
+                                        <Typography component="p" variant="h5" align='left'>{ability.ability.name}</Typography>                                        
                                     </ListItem>
                                 </ul>
                             </li>
                         ))}
                         </List>
-                        <Typography component="p" variant="h6" align='center'>Moves</Typography>
+                        <Typography component="p" variant="h4" align='left'
+                        sx={{borderBottom:1}}
+                        >Moves</Typography>
                         <List
                         sx={{
                             width: '100%',
@@ -77,6 +92,7 @@ class APIDetails extends Component{
                             position: 'relative',
                             overflow: 'auto',
                             maxHeight: 300,
+                            background:'#70b8f0',
                             '& ul': { padding: 0 },
                         }}
                         subheader={<li />}
@@ -85,7 +101,7 @@ class APIDetails extends Component{
                             <li >
                                 <ul>
                                     <ListItem >
-                                        <Typography component="p" variant="h6" align='center'>{move.move.name}</Typography>                                        
+                                        <Typography component="p" variant="h5" align='left'>{move.move.name}</Typography>                                        
                                     </ListItem>
                                 </ul>
                             </li>

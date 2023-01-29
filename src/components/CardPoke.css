@@ -8,3 +8,9 @@
 .media{
     min-width: 144px
 }
+
+img{
+    border-color: #64a5d8;
+    border-style: outset;
+    border-radius: 8px;
+}

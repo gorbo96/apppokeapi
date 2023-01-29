@@ -30,18 +30,25 @@ class CardPoke extends Component{
         const img="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+this.props.index+".png?raw=true"
         const url="/poke-info/"+this.props.index+"/"+this.props.name
             return(                
-                <Card className='item'>
-                    <img className='media' src={img} height='240'/>
+                <Card className='item'
+                sx={{background:"#70b8f0"}}
+                >
+                    <img className='media' src={img} height='240' border='2'/>
                     <CardContent>                    
                         <Link to={url}><Typography component="p" variant="h6">{this.props.name.toUpperCase()}</Typography></Link>
-                        <Typography component="p" variant="subtitle1">Weight</Typography>
-                        <Typography component="p" variant="body1">{pokeData.weight}</Typography>
-                        <Typography component="p" variant="subtitle1">Height</Typography>
-                        <Typography component="p" variant="body1">{pokeData.height}</Typography>
-                        <Typography component="p" variant="subtitle1">Type</Typography>
-                        {pokeType.map((tipo)=>{
-                            
-                            return <Typography component="p" variant="ubtitle1">{tipo.type.name.toUpperCase()}</Typography>
+                        <Typography component="p" variant="subtitle1" align='left'
+                        sx={{borderBottom:1}}
+                        >Weight</Typography>
+                        <Typography component="p" variant="body1" align='right'>{pokeData.weight}</Typography>
+                        <Typography component="p" variant="subtitle1" align='left'
+                        sx={{borderBottom:1}}
+                        >Height</Typography>
+                        <Typography component="p" variant="body1" align='right'>{pokeData.height}</Typography>
+                        <Typography component="p" variant="subtitle1" align='left'
+                        sx={{borderBottom:1}}
+                        >Type</Typography>
+                        {pokeType.map((tipo)=>{                            
+                            return <Typography component="p" variant="subtitle1" align='right'>{tipo.type.name.toUpperCase()}</Typography>
                         })}
                         
                     </CardContent>
